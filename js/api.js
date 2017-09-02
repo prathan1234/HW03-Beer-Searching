@@ -1,7 +1,4 @@
-export const getGithubProfile = () =>
-    fetch('https://api.punkapi.com/v2/beers')
+//ES6
 
-//Or
-// const getGithubProfile = () =>
-// fetch('https://api.punkapi.com/v2/beers')
-// export { getGithubProfile }
+export const getBeersInformation = () =>
+    fetch('https://api.punkapi.com/v2/beers')

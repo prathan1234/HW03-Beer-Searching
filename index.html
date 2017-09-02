@@ -2,11 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="build/main.bundle.js"></script>
     <title>HW03 - Beer searching</title>
 </head>
 <body>
-<p>Heyyyy</p>
+<div class="search_box">
+    <div class="search_icon"><i class="fa fa-search"> Search</i></div>
+    <div class="search_type">
+        <table class="search_area">
+            <tr>
+                <th>Name : </th>
+                <td><input type="text" name="beername" class="search_input"></td>
+            </tr>
+            <tr>
+                <th>Food pairing : </th>
+                <td><input type="text" name="food" class="search_input"></td>
+            </tr>
+            <tr>
+                <th>ph : </th>
+                <td><input type="text" name="ph" class="search_input"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="table_result"></div>
 </body>
 </html>

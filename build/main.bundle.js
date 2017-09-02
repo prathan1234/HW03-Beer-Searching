@@ -4,33 +4,23 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var getGithubProfile = exports.getGithubProfile = function getGithubProfile() {
+//ES6
+
+var getBeersInformation = exports.getBeersInformation = function getBeersInformation() {
     return fetch('https://api.punkapi.com/v2/beers');
 };
-
-//Or
-// const getGithubProfile = () =>
-// fetch('https://api.punkapi.com/v2/beers')
-// export { getGithubProfile }
 
 },{}],2:[function(require,module,exports){
 'use strict';
 
 var _api = require('./api');
 
-(0, _api.getGithubProfile)().then(function (response) {
+(0, _api.getBeersInformation)().then(function (response) {
     return response.json();
 }).catch(function (e) {
     return console.error('You failed');
 }).then(function (response) {
-    return console.log('response', response);
-});
-
-//Or
-// import getGithubProfile from './api'
-// getGithubProfile()
-//     .then(response => response.json())
-//     .catch(e => console.error('You failed'))
-//     .then(response => console.log('response', response))
+    console.log(response);
+}); //ES6
 
 },{"./api":1}]},{},[2]);

@@ -1,13 +1,10 @@
-import { getGithubProfile } from './api'
+//ES6
 
-getGithubProfile()
+import { getBeersInformation } from './api'
+
+getBeersInformation()
     .then(response => response.json())
     .catch(e => console.error('You failed'))
-    .then(response => console.log('response', response))
-
-//Or
-// import getGithubProfile from './api'
-// getGithubProfile()
-//     .then(response => response.json())
-//     .catch(e => console.error('You failed'))
-//     .then(response => console.log('response', response))
+    .then(response => {
+        console.log(response)
+    })
