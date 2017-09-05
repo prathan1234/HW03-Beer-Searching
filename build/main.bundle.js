@@ -28,12 +28,20 @@ getBeersInformation().then(function (response) {
 });
 
 function createTable() {
-    var txt = "";
-    txt += "<b>Beer name</b>" + "<br><br>";
-    for (var x = 0; x < obj.length; ++x) {
+    var txt = "<table border='1px' style='border-collapse: collapse; width: 100%'>";
+
+    txt += "<tr style='background-color: #DDDDDD;'>";
+    txt += "<th>" + "Beer name" + "</th>";
+    txt += "</tr>";
+
+    for (var x = 0; x < obj.length; x++) {
         console.log(obj[x].name);
-        txt += obj[x].name + "<br>";
+        txt += "<tr>";
+        txt += "<td>" + obj[x].name + "</td>";
+        txt += "</tr>";
     }
+
+    txt += "</table>";
     document.getElementById("table_result").innerHTML = txt;
 
     // var dbParam, xmlhttp, myObj, x, txt = "";

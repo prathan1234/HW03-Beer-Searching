@@ -31,7 +31,7 @@ th, td {
     padding: 5px;
 }
 
-th {
+.search_header {
     width: 90px;
     padding-left: 30px;
 }
@@ -50,8 +50,9 @@ th {
 #table_result {
     background-color: white;
     width: 80%;
-    margin: 0px auto auto auto;
+    margin: 30px auto auto auto;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .btn_search {
