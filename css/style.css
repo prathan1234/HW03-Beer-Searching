@@ -27,12 +27,16 @@ body {
     margin-top: 20px;
 }
 
-th, td {
+th {
     padding: 5px;
 }
 
+.cell_padding {
+    padding: 10px;
+}
+
 .search_header {
-    width: 90px;
+    width: 120px;
     padding-left: 30px;
 }
 

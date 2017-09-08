@@ -32,25 +32,25 @@ function createTable() {
     var txt = "<table border='1px' style='border-collapse: collapse; width: 100%'>";
 
     txt += "<tr style='background-color: #DDDDDD;'>";
+    txt += "<th>" + "Image" + "</th>";
     txt += "<th>" + "Beer name" + "</th>";
-    txt += "<th>" + "ABV" + "</th>";
+    txt += "<th>" + "Description" + "</th>";
+    txt += "<th>" + "First brewed" + "</th>";
+    txt += "<th>" + "Tag line" + "</th>";
     txt += "<th>" + "Food pairing" + "</th>";
     txt += "<th>" + "Yeast" + "</th>";
-    txt += "<th>" + "Tag line" + "</th>";
-    txt += "<th>" + "First brewed" + "</th>";
-    txt += "<th>" + "pH" + "</th>";
     txt += "</tr>";
 
     for (var x = 0; x < obj.length; x++) {
         // console.log(obj[x]);
         txt += "<tr>";
-        txt += "<td>" + obj[x].name + "</td>";
-        txt += "<td>" + obj[x].abv + "</td>";
-        txt += "<td>" + obj[x].food_pairing + "</td>";
-        txt += "<td>" + obj[x].ingredients.yeast + "</td>";
-        txt += "<td>" + obj[x].tagline + "</td>";
-        txt += "<td>" + obj[x].first_brewed + "</td>";
-        txt += "<td>" + obj[x].ph + "</td>";
+        txt += "<td class='cell_padding'>" + "<img src='" + obj[x].image_url + "' style='width: 50px; padding: 10px' />" + "</td>";
+        txt += "<td class='cell_padding'>" + obj[x].name + "</td>";
+        txt += "<td class='cell_padding'>" + obj[x].description + "</td>";
+        txt += "<td class='cell_padding'>" + obj[x].first_brewed + "</td>";
+        txt += "<td class='cell_padding'>" + obj[x].tagline + "</td>";
+        txt += "<td class='cell_padding'>" + obj[x].food_pairing + "</td>";
+        txt += "<td class='cell_padding'>" + obj[x].ingredients.yeast + "</td>";
         txt += "</tr>";
     }
 
@@ -68,9 +68,9 @@ function onclick() {
     var x = 0;
     var search_name = document.getElementById("beer_name").value;
     var search_food = document.getElementById("food").value;
-    var search_yeast = document.getElementById("yeast").value;
+    var search_brewed_before = document.getElementById("brewed").value;
 
-    if (search_name == "" && search_food == "" && search_yeast == "") {
+    if (search_name == "" && search_food == "" && search_brewed_before == "") {
         api_string = "";
     } else {
         api_string = "";
@@ -82,7 +82,7 @@ function onclick() {
         if (search_food != "") {
             x = x + 1;
         }
-        if (search_yeast != "") {
+        if (search_brewed_before != "") {
             x = x + 1;
         }
 
@@ -95,10 +95,10 @@ function onclick() {
                 param = "food";
                 val = search_food;
                 search_food = "";
-            } else if (search_yeast != "") {
-                param = "yeast";
-                val = search_yeast;
-                search_yeast = "";
+            } else if (search_brewed_before != "") {
+                param = "brewed_before";
+                val = search_brewed_before;
+                search_brewed_before = "";
             }
             if (i == 0) {
                 api_string += param + "=" + val;
